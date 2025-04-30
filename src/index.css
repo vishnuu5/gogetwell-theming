@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base theme (light) */
+    --color-primary: 29 78 216; /* blue-700 */
+    --color-secondary: 96 165 250; /* blue-400 */
+    --color-accent: 239 68 68; /* red-500 */
+    --color-background: 255 255 255; /* white */
+    --color-foreground: 17 24 39; /* gray-900 */
+    --color-muted: 107 114 128; /* gray-500 */
+    --color-button-text: 255 255 255; /* white for button text */
+
+    /* Cardiac theme */
+    --cardiac-primary: 220 38 38; /* red-600 */
+    --cardiac-secondary: 248 113 113; /* red-400 */
+    --cardiac-accent: 37 99 235; /* blue-600 */
+
+    /* Pediatrics theme */
+    --pediatrics-primary: 16 185 129; /* emerald-500 */
+    --pediatrics-secondary: 52 211 153; /* emerald-400 */
+    --pediatrics-accent: 245 158 11; /* amber-500 */
+
+    /* Oncology theme */
+    --oncology-primary: 124 58 237; /* purple-600 */
+    --oncology-secondary: 167 139 250; /* purple-400 */
+    --oncology-accent: 245 158 11; /* amber-500 */
+  }
+
+  .dark {
+    --color-primary: 96 165 250; /* blue-400 */
+    --color-secondary: 59 130 246; /* blue-500 */
+    --color-accent: 248 113 113; /* red-400 */
+    --color-background: 17 24 39; /* gray-900 */
+    --color-foreground: 255 255 255; /* white */
+    --color-muted: 209 213 219; /* gray-300 */
+    --color-button-text: 255 255 255; /* white for button text */
+
+    /* Dark mode specialty themes */
+    --cardiac-primary: 248 113 113; /* red-400 */
+    --cardiac-secondary: 220 38 38; /* red-600 */
+    --cardiac-accent: 96 165 250; /* blue-400 */
+
+    --pediatrics-primary: 52 211 153; /* emerald-400 */
+    --pediatrics-secondary: 16 185 129; /* emerald-500 */
+    --pediatrics-accent: 251 191 36; /* amber-400 */
+
+    --oncology-primary: 167 139 250; /* purple-400 */
+    --oncology-secondary: 124 58 237; /* purple-600 */
+    --oncology-accent: 251 191 36; /* amber-400 */
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-opacity-90;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-opacity-90;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-6;
+  }
+
+  /* Ensure all buttons have proper text color */
+  button,
+  .button {
+    @apply text-white;
+  }
+
+  /* Ensure proper text colors for cards */
+  .card {
+    @apply text-foreground;
+  }
+
+  /* Ensure proper text colors for inputs */
+  input,
+  textarea,
+  select {
+    @apply bg-background text-foreground border-gray-300 dark:border-gray-600;
+  }
+}
